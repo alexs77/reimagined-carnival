@@ -26,7 +26,6 @@
     mode: '0755'
     owner: '{{ zk_user }}'
     group: '{{ zk_group }}'
-    recurse: yes
   become: yes
 
 - name: Fetch and unarchive Zookeeper distribution
