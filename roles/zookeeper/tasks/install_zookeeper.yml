@@ -6,9 +6,15 @@
       - default-jre
   become: yes
 
+- name: Create group for zookeeper
+  ansible.builtin.group:
+    name: zk
+  become: yes
+
 - name: Create user account for zookeeper
   ansible.builtin.user:
     name: zk
+    group: zk
     comment: Zookeeper
     shell: /bin/sh
   become: yes
