@@ -1,0 +1,5 @@
+# For ansible-galaxy (see docker/Dockerfile)
+collections:
+- name: community.general
+- name: ansible.posix
+

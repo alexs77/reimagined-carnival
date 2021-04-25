@@ -1,0 +1,5 @@
+**.pyc
+*.out
+*~
+files/**/__pycache__
+._*
