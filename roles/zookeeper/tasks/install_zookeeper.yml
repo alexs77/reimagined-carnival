@@ -1,0 +1,30 @@
+
+- name: Install pre-requisites
+  ansible.builtin.apt:
+    name:
+      - default-jdk
+      - default-jre
+  become: yes
+
+- name: Create user account for zookeeper
+  ansible.builtin.user:
+    name: zk
+    comment: Zookeeper
+    shell: /bin/sh
+  become: yes
+
+- name: Create data directory
+  ansible.builtin.file:
+    path: '{{ zk_data_dir }}'
+    state: directory
+    mode: '0755'
+    owner: zk
+    group: zk
+  become: yes
+
+- name: Fetch and unarchive Zookeeper distribution
+  ansible.builtin.unarchive:
+    src: '{{ zk_download_url }}'
+    dest: /opt
+    remote_src: yes
+  become: yes
