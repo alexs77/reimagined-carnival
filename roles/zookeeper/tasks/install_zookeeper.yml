@@ -34,3 +34,12 @@
     dest: /opt
     remote_src: yes
   become: yes
+
+- name: Create a symbolic link to the versioned directory name
+  ansible.builtin.file:
+    src: '/opt/zookeeper-{{ zk_version }}'
+    dest: /opt/zookeeper
+    owner: zk
+    group: zk
+    state: link
+  become: yes
