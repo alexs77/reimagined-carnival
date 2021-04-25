@@ -8,13 +8,13 @@
 
 - name: Create group for zookeeper
   ansible.builtin.group:
-    name: zk
+    name: '{{ zk_group }}'
   become: yes
 
 - name: Create user account for zookeeper
   ansible.builtin.user:
-    name: zk
-    group: zk
+    name: '{{ zk_user }}'
+    group: '{{ zk_group }}'
     comment: Zookeeper
     shell: /bin/sh
   become: yes
