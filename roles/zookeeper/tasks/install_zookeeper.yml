@@ -39,7 +39,7 @@
 - name: Create a symbolic link to the versioned directory name
   ansible.builtin.file:
     src: '/opt/zookeeper-{{ zk_version }}'
-    dest: /opt/zookeeper
+    dest: '{{ zk_install_dir }}'
     owner: zk
     group: zk
     state: link
