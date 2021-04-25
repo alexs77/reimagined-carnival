@@ -44,3 +44,11 @@
     group: zk
     state: link
   become: yes
+
+- name: Template Zookeeper configuration file
+  ansible.builtin.template:
+    src: zoo.cfg.j2
+    dest: '{{ zk_install_dir }}/conf/zoo.cfg'
+    mode: '0644'
+  become: yes
+  become_user: zk

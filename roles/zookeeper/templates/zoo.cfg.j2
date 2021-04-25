@@ -1,0 +1,6 @@
+{{ (ansible_managed + "template: " + template_path|relpath(playbook_dir)) | comment }}
+
+tickTime=2000
+dataDir={{ zk_data_dir }}
+clientPort=2181
+maxClientCnxns=60
