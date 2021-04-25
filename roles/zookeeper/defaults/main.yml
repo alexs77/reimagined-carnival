@@ -7,8 +7,8 @@ zk_download_url: https://downloads.apache.org/zookeeper/zookeeper-3.7.0/apache-z
 
 zk_servers:
   - id: 1
-    name: zoo-a
+    name: 20.199.190.180
   - id: 2
-    name: zoo-b
+    name: 20.199.184.82
   - id: 3
-    name: zoo-c
+    name: 20.199.189.52
