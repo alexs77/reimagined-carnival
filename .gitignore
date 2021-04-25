@@ -2,4 +2,5 @@
 *.out
 *~
 files/**/__pycache__
+.cache/*
 ._*
