@@ -4,3 +4,10 @@ tickTime=2000
 dataDir={{ zk_data_dir }}
 clientPort=2181
 maxClientCnxns=60
+
+initLimit=10
+syncLimit=5
+
+{% for zk_server in zk_servers %}
+server.{{ zk_server.id }}={{ zk_server.name }}:2888:3888
+{% endfor %}
