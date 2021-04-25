@@ -11,3 +11,5 @@ syncLimit=5
 {% for zk_server in zk_servers %}
 server.{{ zk_server.id }}={{ zk_server.name }}:2888:3888
 {% endfor %}
+
+admin.enableServer=false
