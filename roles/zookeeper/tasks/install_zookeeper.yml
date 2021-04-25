@@ -24,8 +24,8 @@
     path: '{{ zk_data_dir }}'
     state: directory
     mode: '0755'
-    owner: zk
-    group: zk
+    owner: '{{ zk_user }}'
+    group: '{{ zk_group }}'
     recurse: yes
   become: yes
 
@@ -40,8 +40,8 @@
   ansible.builtin.file:
     src: '/opt/zookeeper-{{ zk_version }}'
     dest: '{{ zk_install_dir }}'
-    owner: zk
-    group: zk
+    owner: '{{ zk_user }}'
+    group: '{{ zk_group }}'
     state: link
   become: yes
 
