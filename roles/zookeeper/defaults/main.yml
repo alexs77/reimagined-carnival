@@ -8,8 +8,8 @@ zk_download_url: 'https://downloads.apache.org/zookeeper/zookeeper-3.7.0/apache-
 zk_servers:
   # Note: Might need to use private IPs, if behind NAT (Azure, AWS, ...)
   - id: 1
-    name: '10.1.0.7'
+    name: '172.16.0.1'
   - id: 2
-    name: '10.1.0.9'
+    name: '172.16.0.2'
   - id: 3
-    name: '10.1.0.10'
+    name: '172.16.0.3'
