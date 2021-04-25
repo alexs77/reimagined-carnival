@@ -51,7 +51,7 @@
     group: '{{ zk_group }}'
     mode: '0644'
   become: true
-  notify: zk reload
+  notify: zk restart
 
 - name: 'Template Zookeeper myid file for node'
   ansible.builtin.template:
@@ -61,7 +61,7 @@
     owner: '{{ zk_user }}'
     group: '{{ zk_group }}'
   become: true
-  notify: zk reload
+  notify: zk restart
 
 - name: 'Install Zookeeper systemd service'
   ansible.builtin.template:

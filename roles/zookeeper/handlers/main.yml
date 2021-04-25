@@ -4,13 +4,6 @@
   when: ansible_service_mgr == "systemd"
   become: true
 
-- name: 'zk reload'
-  service:
-    name: 'zk'
-    state: 'reloaded'
-  when: ansible_service_mgr == "systemd"
-  become: true
-
 - name: 'zk restart'
   service:
     name: 'zk'
