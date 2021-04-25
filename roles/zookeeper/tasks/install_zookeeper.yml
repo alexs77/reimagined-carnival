@@ -52,6 +52,7 @@
     group: '{{ zk_group }}'
     mode: '0644'
   become: yes
+  notify: zk reload
 
 - name: Template Zookeeper myid file for node
   ansible.builtin.template:
@@ -61,6 +62,7 @@
     owner: '{{ zk_user }}'
     group: '{{ zk_group }}'
   become: yes
+  notify: zk reload
 
 - name: Install Zookeeper systemd service
   ansible.builtin.template:

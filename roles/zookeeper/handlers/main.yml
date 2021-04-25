@@ -4,23 +4,17 @@
   when: ansible_service_mgr == "systemd"
   become: yes
 
-- name: sshd reload
+- name: zk reload
   service:
-    name: ssh
+    name: zk
     state: reloaded
   when: ansible_service_mgr == "systemd"
   become: yes
 
-- name: sshd restart
+- name: zk restart
   service:
-    name: ssh
+    name: zk
     state: restarted
   when: ansible_service_mgr == "systemd"
   become: yes
 
-- name: networking restart
-  service:
-    name: networking
-    state: restarted
-  when: ansible_service_mgr == "systemd"
-  become: yes
