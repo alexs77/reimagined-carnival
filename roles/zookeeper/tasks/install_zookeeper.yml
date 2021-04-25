@@ -26,6 +26,7 @@
     mode: '0755'
     owner: zk
     group: zk
+    recurse: yes
   become: yes
 
 - name: Fetch and unarchive Zookeeper distribution
