@@ -49,6 +49,32 @@
   ansible.builtin.template:
     src: zoo.cfg.j2
     dest: '{{ zk_install_dir }}/conf/zoo.cfg'
+    owner: '{{ zk_user }}'
+    group: '{{ zk_group }}'
     mode: '0644'
   become: yes
-  become_user: zk
+
+- name: Template Zookeeper myid file for node
+  ansible.builtin.template:
+    src: zk.myid.j2
+    dest: '{{ zk_data_dir }}/myid'
+    mode: '0644'
+    owner: '{{ zk_user }}'
+    group: '{{ zk_group }}'
+  become: yes
+
+- name: Install Zookeeper systemd service
+  ansible.builtin.template:
+    src: zk.service.j2
+    dest: /etc/systemd/system/zk.service
+    mode: '0644'
+  become: yes
+  notify: systemctl daemon-reload
+
+- name: Enabled Zookeeper systemd service
+  ansible.builtin.systemd:
+    name: zk
+    state: started
+    enabled: yes
+    masked: no
+  become: yes
