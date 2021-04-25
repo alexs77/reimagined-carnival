@@ -1,14 +1,15 @@
-zk_user: zk
-zk_group: zk
-zk_install_dir: /opt/zookeeper
-zk_data_dir: /var/opt/zookeeper
+zk_user: 'zk'
+zk_group: 'zk'
+zk_install_dir: '/opt/zookeeper'
+zk_data_dir: '/var/opt/zookeeper'
 zk_version: 3.7.0
-zk_download_url: https://downloads.apache.org/zookeeper/zookeeper-3.7.0/apache-zookeeper-3.7.0-bin.tar.gz
+zk_download_url: 'https://downloads.apache.org/zookeeper/zookeeper-3.7.0/apache-zookeeper-3.7.0-bin.tar.gz'
 
 zk_servers:
+  # Note: Might need to use private IPs, if behind NAT (Azure, AWS, ...)
   - id: 1
-    name: 20.199.190.180
+    name: '10.1.0.7'
   - id: 2
-    name: 20.199.184.82
+    name: '10.1.0.9'
   - id: 3
-    name: 20.199.189.52
+    name: '10.1.0.10'

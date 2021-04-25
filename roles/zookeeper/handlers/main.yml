@@ -1,20 +1,20 @@
-- name: systemctl daemon-reload
+- name: 'systemctl daemon-reload'
   systemd:
-    daemon_reload: yes
+    daemon_reload: true
   when: ansible_service_mgr == "systemd"
-  become: yes
+  become: true
 
-- name: zk reload
+- name: 'zk reload'
   service:
-    name: zk
-    state: reloaded
+    name: 'zk'
+    state: 'reloaded'
   when: ansible_service_mgr == "systemd"
-  become: yes
+  become: true
 
-- name: zk restart
+- name: 'zk restart'
   service:
-    name: zk
-    state: restarted
+    name: 'zk'
+    state: 'restarted'
   when: ansible_service_mgr == "systemd"
-  become: yes
+  become: true
 
